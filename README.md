@@ -9,7 +9,6 @@ This project implements a synchronized shared memory interaction mechanism in a 
 
 - **consumer.c**: Contains the implementation of the consumer, which reads data from the shared memory and processes it.
 - **producer.c**: Contains the implementation of the producer, which generates data and writes it to the shared memory.
-- **assingmet 4/**: Additional documentation or assignment-related information (likely explanations or tasks related to the project).
 - **consumer/** and **producer/**: Additional resources or extensions for the consumer and producer processes, respectively.
 
 ## Features
