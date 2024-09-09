@@ -40,6 +40,20 @@ This project implements a synchronized shared memory interaction mechanism in a 
     ./producer
     ```
 
++-----------------+     +-------------------+     +-----------------+
+|                 |     |                   |     |                 |
+|     Producer    |---->|  Shared Memory     |---->|    Consumer     |
+|                 |     |   (Buffer)         |     |                 |
++-----------------+     |                   |     +-----------------+
+        |               +-------------------+              ^
+        |                        |                         |
+        v                        v                         |
++----------------+        +------------------+        +----------------+
+|   Semaphore    |<------>|   Synchronization |<------>|   Semaphore    |
+|   (Controls)   |        |   Mechanism       |        |   (Controls)   |
++----------------+        +------------------+        +----------------+
+
+
 ## License
 
 This project is open-source and can be modified or distributed under the terms of the MIT License.
