@@ -17,6 +17,27 @@ This project implements a synchronized shared memory interaction mechanism in a 
 - **Synchronization**: Implements synchronization techniques to prevent race conditions and ensure that the producer and consumer access shared memory in a controlled manner.
 - **Minimal and Efficient**: Designed to be simple while ensuring efficient data exchange and synchronization.
 
+## Visualization
+
+Here is a text-based diagram representing the interaction between the producer and consumer using shared memory and semaphores:
+
+```plaintext
++-----------------+     +-------------------+     +-----------------+
+|                 |     |                   |     |                 |
+|     Producer    |---->|  Shared Memory     |---->|    Consumer     |
+|                 |     |   (Buffer)         |     |                 |
++-----------------+     |                   |     +-----------------+
+        |               +-------------------+              ^
+        |                        |                         |
+        v                        v                         |
++----------------+        +------------------+        +----------------+
+|   Semaphore    |<------>|   Synchronization |<------>|   Semaphore    |
+|   (Controls)   |        |   Mechanism       |        |   (Controls)   |
++----------------+        +------------------+        +----------------+
+```
+
+This diagram illustrates the flow of data between the producer and consumer, with semaphores managing access to the shared memory.
+
 ## Requirements
 
 - **GCC**: The code is written in C and can be compiled using `gcc`.
@@ -39,20 +60,6 @@ This project implements a synchronized shared memory interaction mechanism in a 
     ```bash
     ./producer
     ```
-
-+-----------------+     +-------------------+     +-----------------+
-|                 |     |                   |     |                 |
-|     Producer    |---->|  Shared Memory     |---->|    Consumer     |
-|                 |     |   (Buffer)         |     |                 |
-+-----------------+     |                   |     +-----------------+
-        |               +-------------------+              ^
-        |                        |                         |
-        v                        v                         |
-+----------------+        +------------------+        +----------------+
-|   Semaphore    |<------>|   Synchronization |<------>|   Semaphore    |
-|   (Controls)   |        |   Mechanism       |        |   (Controls)   |
-+----------------+        +------------------+        +----------------+
-
 
 ## License
 
